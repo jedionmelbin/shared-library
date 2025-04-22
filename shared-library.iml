@@ -8,5 +8,9 @@
     <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="groovy-4.0.14" level="project" />
+    <orderEntry type="library" name="groovy-4.0.14" level="project" />
+    <orderEntry type="library" name="groovy-4.0.14" level="project" />
+    <orderEntry type="library" name="groovy-5.0.0-alpha-1" level="project" />
+    <orderEntry type="library" name="groovy-5.0.0-alpha-1 (2)" level="project" />
   </component>
 </module>
