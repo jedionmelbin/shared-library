@@ -1,15 +1,8 @@
-/**
- * Ejecuta el versionado de imagen basado en la versión Maven del proyecto.
- * Pone en env:
- *   MAJOR_VERSION, MINOR_VERSION, INCREMENTAL_VERSION, BUILD_SUFFIX, IMAGE_VERSION
- *
- * @param mavenWrapper Ruta al wrapper de Maven (opcional, default './mvnw')
- */
 def call(String mavenWrapper = './mvnw') {
     // 1. Obtener versión actual
     def versionOutput = sh(
-            script: "${mavenWrapper} -q -Dexec.executable=\"echo\" " +
-                    "-Dexec.args='${project.version}' --non-recursive exec:exec",
+            script: "${mavenWrapper} -q -Dexec.executable='echo' " +
+                    "-Dexec.args='\\\${project.version}' --non-recursive exec:exec",
             returnStdout: true
     ).trim()
     echo "Version Output: ${versionOutput}"
