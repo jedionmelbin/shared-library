@@ -1,3 +1,5 @@
+package com.xprotech.library
+
 @Library('shared-library') _
 
 pipeline {
@@ -7,7 +9,7 @@ pipeline {
         stage('docker build') {
             steps {
                 script {
-                    dockerLib.build(DockerfilePath: "image/Dockerfile",
+                    com.xprotech.library.dockerLib.build(DockerfilePath: "image/Dockerfile",
                             DockerImage: "image/image:1.0.0-${BUILD_ID}",
                             DockerContext: "02-first-pipeline")
                 }
@@ -16,7 +18,7 @@ pipeline {
         stage('docker push') {
             steps {
                 script {
-                    dockerLib.push(DockerImage: "image/image:1.0.0-${BUILD_ID}")
+                    com.xprotech.library.dockerLib.push(DockerImage: "image/image:1.0.0-${BUILD_ID}")
                 }
             }
         }

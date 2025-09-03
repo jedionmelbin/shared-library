@@ -1,3 +1,5 @@
+package com.xprotech.library
+
 def build(Map params) {
     sh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
 }

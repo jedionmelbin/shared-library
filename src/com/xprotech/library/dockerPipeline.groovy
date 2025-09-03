@@ -1,3 +1,5 @@
+package com.xprotech.library
+
 def call(Map pipelineParams) {
     pipeline {
         agent any
@@ -6,7 +8,7 @@ def call(Map pipelineParams) {
             stage("docker build") {
                 steps {
                     script {
-                        dockerLib.build()
+                        com.xprotech.library.dockerLib.build()
                     }
                 }
             }
@@ -14,7 +16,7 @@ def call(Map pipelineParams) {
             stage("docker push") {
                 steps {
                     script {
-                        dockerLib.push(DockerImage: pipelineParams.dockerImage)
+                        com.xprotech.library.dockerLib.push(DockerImage: pipelineParams.dockerImage)
                     }
                 }
             }
